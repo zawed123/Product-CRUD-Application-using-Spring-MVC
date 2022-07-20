@@ -33,7 +33,9 @@
 								<td>${product.description }</td>
 								<td class="font-weight-bold">&#x20B9 ${product.price }</td>
 								<td><a href="delete-product/${product.id }"><i
-										class="fas fa-trash text-danger" style="font-size: 25px;"></i></a></td>
+										class="fas fa-trash text-danger" style="font-size: 20px;"></i></a>
+								<a href="update-product/${product.id }"><i
+										class="fas fa-pen-nib text-primary" style="font-size: 20px;"></i></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

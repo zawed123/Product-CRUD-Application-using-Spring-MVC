@@ -49,11 +49,18 @@ public class MainController {
 
 	@RequestMapping("/delete-product/{productId}")
 	public RedirectView deleteProduct(@PathVariable("productId") int productId, HttpServletRequest request) {
-		
+
 		this.productDao.deleteProduct(productId);
 		RedirectView redirectView = new RedirectView();
 		redirectView.setUrl(request.getContextPath() + "/");
 		return redirectView;
+	}
+
+	@RequestMapping("/update-product/{productId}")
+	public String updateForm(@PathVariable("productId") int productId, Model model) {
+		Product product = productDao.getProduct(productId);
+		model.addAttribute("product", product);
+		return "update_form";
 	}
 
 }
